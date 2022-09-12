@@ -2,34 +2,30 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AppIntroSlider from 'react-native-app-intro-slider';
-
+import { AntDesign } from '@expo/vector-icons';
 
 
 const slides = [
   {
     key: 1,
-
     text: 'Have you been feeling well and healthy recently',
     image: require('../../assets/healtyi.png'),
     backgroundColor: '#59b2ab',
   },
   {
     key: 2,
-
     text: 'Do you weight atleast 50 kg',
     image: require('../../assets/weight.png'),
     backgroundColor: '#febe29',
   },
   {
     key: 3,
-
     text: 'Are you currently pregnant or breastfeeding',
     image: require('../../assets/pregnant.jpg'),
     backgroundColor: '#22bcb5',
   },
   {
     key: 4,
-
     text: 'Received as transfusion in the past 3 months',
     image: require('../../assets/donate.jpg'),
     backgroundColor: '#22bcb5',
@@ -38,7 +34,6 @@ const slides = [
 
 
 const EligibityTest = () => {
-  const [state, setstate] = useState(false)
   const navigation = useNavigation();
   const renderitem = ({ item }) => {
     return (
@@ -56,8 +51,8 @@ const EligibityTest = () => {
 
   const renderNextButton = () => {
     return (
-      <View className='bg-[#F50057] px-5 py-2 rounded-md mt-2' >
-        <Text className="text-white capitalize">next</Text>
+      <View className='bg-[#F50057] p-3 rounded-full right-3 -mt-1' >
+        <AntDesign name="right" size={25} color="white" />
       </View>
     );
   };
@@ -68,7 +63,7 @@ const EligibityTest = () => {
         onPress={() => {
           navigation.navigate("congrate")
         }}
-        className="bg-[#F50057] px-4 py-2 rounded-md mt-2">
+        className="bg-[#F50057] px-4 py-2 rounded-md mt-1">
         <Text className="text-white capitalize">
           done
         </Text>
@@ -78,7 +73,7 @@ const EligibityTest = () => {
 
   const showSkipButton = () => {
     return (
-      <View className='bg-[#F50057] px-5 py-2 rounded-md mt-2' >
+      <View className='bg-[#F50057] px-5 py-2 rounded-md mt-2 absolute -top-[950px] left-[380px]' >
         <Text className="text-white capitalize">skip</Text>
       </View>
     );
@@ -86,7 +81,7 @@ const EligibityTest = () => {
 
   const showbackboutton = () => {
     return (
-      <View className='bg-[#F50057] px-5 py-2 rounded-md mt-2' >
+      <View className='bg-[#F50057] px-5 py-2 rounded-md mt-2 absolute -top-[950px] left-[380px]' >
         <Text className="text-white capitalize">Back</Text>
       </View>
     );
